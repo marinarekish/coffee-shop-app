@@ -1,5 +1,5 @@
 import { SliderCard } from "./SliderCard";
-import { SLIDES } from "./data";
+import { SLIDES } from "../../../../data/sliderData";
 import { Container, Header, Accent } from "./styledSlider";
 
 export function Slider() {

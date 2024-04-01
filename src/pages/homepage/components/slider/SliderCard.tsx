@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Slides } from "./types";
+import { Slides } from "../../../../types";
 import { BannerText, Card, Dots, Dot, DotSelected, ImageSlider, MainText, Paragraph } from "./styledSlider";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import { Button } from "../../../components/button/Button";
+import { Button } from "../../../../components/button/Button";
 
 type SliderCardProps = {
   choices: Slides;

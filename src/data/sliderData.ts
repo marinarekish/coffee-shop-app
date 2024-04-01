@@ -1,11 +1,11 @@
-import { Slides } from "./types";
+import { Slides } from "../types";
 import coffeeSlider1 from "/img/coffeeSlider1.png";
 import coffeeSlider2 from "/img/coffeeSlider2.png";
 import coffeeSlider3 from "/img/coffeeSlider3.png";
 
 export const SLIDES: Slides = [
   {
-    title: `S’mores Frappuccino`,
+    title: `S'mores Frappuccino`,
     imgUrl: coffeeSlider1,
     description:
       "This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.",

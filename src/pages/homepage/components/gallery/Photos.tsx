@@ -1,4 +1,4 @@
-import { Image } from "./data";
+import { Image } from "../../../../data/galleryData";
 import { Gallery, Photo } from "./styledGallery";
 
 type PhotosProps = {

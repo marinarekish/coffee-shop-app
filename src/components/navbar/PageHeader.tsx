@@ -1,6 +1,6 @@
 import { MdMenu } from "react-icons/md";
 import logo from "/img/logo1.png";
-import { Button } from "../../../components/button/Button";
+import { Button } from "../button/Button";
 import { Link } from "react-router-dom";
 import { Container, Logo } from "./styledPageHeader";
 

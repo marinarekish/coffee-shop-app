@@ -1,5 +1,5 @@
 import { Photos } from "./Photos";
-import { IMAGES } from "./data";
+import { IMAGES } from "../../../../data/galleryData";
 import { Accent, Container, Header } from "./styledGallery";
 
 export function Gallery() {
