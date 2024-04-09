@@ -1,7 +1,8 @@
-export enum EntityType {
-  COFFEE = "coffee",
-  TEA = "tea",
-  DESSERT = "dessert",
+export enum MenuItem {
+  TOP_CHOICES = "top",
+  COFFEES = "coffee",
+  TEAS = "tea",
+  DESSERTS = "dessert",
 }
 
 export type Slide = {
@@ -13,13 +14,13 @@ export type Slide = {
 
 export type Slides = Slide[];
 
-export type MenuItem = {
+export type MenuCard = {
   title: string;
   imgUrl: string;
   description: string;
   price: string;
 };
 
-export type MenuCategory = MenuItem[];
+export type MenuCategory = MenuCard[];
 
-export type Menu = Record<EntityType, MenuCategory>;
+export type Menu = Record<MenuItem, MenuCategory>;

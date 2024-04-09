@@ -1,23 +1,14 @@
+// import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const MenuContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin: 0 auto;
-  padding: 0 2rem;
+  gap: 20px;
+  margin: 0 auto 20px auto;
+  padding: 0 20px;
   align-items: center;
   justify-content: center;
-`;
-
-export const Card = styled.div`
-  width: 310px;
-  height: 506px;
-  border-radius: 20px;
-  border: 1px solid #c1b6ad;
-  display: flex;
-  flex-direction: column;
-  position: relative;
 `;
 
 export const ImgDiv = styled.div`
@@ -31,9 +22,44 @@ export const CardImage = styled.img`
   width: 100%;
   height: auto;
   transition: 0.4s;
+  transform: scale(1.1, 1.1);
+`;
+
+export const Buy = styled.button`
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: 900;
+  background-color: #c1b6ad;
+  color: #403f3d;
+  border-radius: 20px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  transition: 0.3s;
+`;
+
+export const Card = styled.a`
+  width: 310px;
+  height: 520px;
+  border-radius: 20px;
+  border: 1px solid #c1b6ad;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
 
   &:hover {
-    transform: scale(1.2, 1.2);
+    box-shadow: 5px 5px 10px -9px rgba(193, 182, 173, 1);
+
+    ${CardImage} {
+      transform: scale(1, 1);
+    }
+
+    ${Buy} {
+      background-color: #b0907a;
+      color: #403f3d;
+      transition: 0.3s;
+    }
   }
 `;
 
@@ -64,6 +90,6 @@ export const CardPrice = styled.h3`
   line-height: 125%;
   color: #403f3d;
   position: absolute;
-  bottom: 20px;
   right: 20px;
+  bottom: 25px;
 `;

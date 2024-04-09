@@ -1,5 +1,5 @@
 import { Image } from "../../../../data/galleryData";
-import { Gallery, Photo } from "./styledGallery";
+import { Gallery, Photo, PhotoDiv } from "./styledGallery";
 
 type PhotosProps = {
   images: Image[];
@@ -9,7 +9,9 @@ export function Photos({ images }: PhotosProps) {
   return (
     <Gallery>
       {images.map((image, index) => (
-        <Photo key={index} src={image.src} />
+        <PhotoDiv key={index}>
+          <Photo src={image.src} />
+        </PhotoDiv>
       ))}
     </Gallery>
   );

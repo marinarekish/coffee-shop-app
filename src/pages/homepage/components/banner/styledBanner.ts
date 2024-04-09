@@ -1,51 +1,22 @@
 import styled from "styled-components";
+import imgHero from "/img/imgHero.jpg";
 
 export const Container = styled.div`
-  position: relative;
-  margin: 0 auto;
-  padding: 0 1rem;
-  width: 100%;
-`;
-
-export const ImageHero = styled.img`
-  object-fit: cover;
-  width: 100%;
-  min-width: 380px;
-  max-width: 1440px;
-  height: 650px;
+  background-image: url(${imgHero});
+  background-size: cover;
+  background-position: center;
+  padding: 100px;
+  /* width: 100%; */
   border-radius: 25px;
 `;
 
 export const BannerText = styled.div`
-  position: absolute;
-  top: 20%;
-  left: 10%;
   color: #e1d4c9;
-  width: 60%;
-  /* max-width: 350px; */
   min-width: 340px;
   height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  @media (max-width: 890px) {
-    width: 80%;
-    height: 40%;
-  }
-
-  @media (max-width: 760px) {
-    width: 80%;
-    height: 40%;
-    top: 10%;
-  }
-
-  /* mobile */
-  @media (max-width: 380px) {
-    width: 90%;
-    top: 10%;
-    left: 10%;
-  }
 `;
 
 export const Header = styled.h1`
@@ -90,4 +61,15 @@ export const Paragraph = styled.p`
   @media (max-width: 379px) {
     font-size: 16px;
   }
+`;
+
+export const BannerButton = styled.button`
+  margin-top: 40px;
+  padding: 20px;
+  width: 200px;
+  border-radius: 100px;
+  background-color: #e1d4c9;
+  color: #403f3d;
+  font-size: 16px;
+  font-weight: 600;
 `;

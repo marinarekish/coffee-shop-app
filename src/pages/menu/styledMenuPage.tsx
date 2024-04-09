@@ -60,8 +60,3 @@ export const MenuLink = styled(NavLink)`
     border: none;
   }
 `;
-
-// style={({ isActive }) => ({
-//   color: isActive ? "#E1D4C9" : "",
-//   background: isActive ? "#403F3D" : "",
-// })}

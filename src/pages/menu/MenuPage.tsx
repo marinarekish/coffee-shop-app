@@ -1,5 +1,4 @@
-import { PageHeader } from "../../components/navbar/PageHeader";
-import { EntityType } from "../../types";
+import { MenuItem } from "../../types";
 import { Accent, BtnDiv, Container, Header, MenuLink } from "./styledMenuPage";
 import { Outlet } from "react-router-dom";
 import { FiCoffee } from "react-icons/fi";
@@ -9,20 +8,20 @@ import { RiCake3Line } from "react-icons/ri";
 export default function MenuPage() {
   return (
     <Container>
-      <PageHeader />
       <Header>
         Behind each of our cups hides an <Accent>amazing surprise</Accent>
       </Header>
       <BtnDiv>
-        <MenuLink to={EntityType.COFFEE}>
+        <MenuLink to={MenuItem.TOP_CHOICES}>Today's top choices</MenuLink>
+        <MenuLink to={MenuItem.COFFEES}>
           <FiCoffee />
           Coffee
         </MenuLink>
-        <MenuLink to={EntityType.TEA}>
+        <MenuLink to={MenuItem.TEAS}>
           <TbTeapot />
           Tea
         </MenuLink>
-        <MenuLink to={EntityType.DESSERT}>
+        <MenuLink to={MenuItem.DESSERTS}>
           <RiCake3Line />
           Dessert
         </MenuLink>

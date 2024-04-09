@@ -1,8 +1,8 @@
-import { MdMenu } from "react-icons/md";
-import logo from "/img/logo1.png";
-import { Button } from "../button/Button";
 import { Link } from "react-router-dom";
+
+import logo from "/img/logo1.png";
 import { Container, Logo } from "./styledPageHeader";
+import { Navbar } from "./navbar/Navbar";
 
 export function PageHeader() {
   return (
@@ -10,11 +10,7 @@ export function PageHeader() {
       <Link to="/">
         <Logo src={logo} />
       </Link>
-      <Button variant="ghost">
-        <MdMenu className="w-8 h-8" />
-      </Button>
+      <Navbar />
     </Container>
   );
 }
-
-// add open menu toggle

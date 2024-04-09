@@ -22,10 +22,48 @@ import dessert6 from "/img/dessert6.png";
 import dessert7 from "/img/dessert7.png";
 import dessert8 from "/img/dessert8.png";
 
-import { EntityType } from "../types";
+import { MenuItem } from "../types";
 
 export const menu = {
-  [EntityType.COFFEE]: [
+  [MenuItem.TOP_CHOICES]: [
+    {
+      title: `Honey cake`,
+      imgUrl: dessert6,
+      description: "Classic honey cake with delicate custard",
+      price: "4.50",
+    },
+    {
+      title: "Caramel Macchiato",
+      imgUrl: coffee10,
+      description: "Fragrant classic espresso with caramel-peanut syrup, with cream under whipped thick foam.",
+      price: "5.00",
+    },
+    {
+      title: `Moroccan`,
+      imgUrl: tea1,
+      description: "Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint",
+      price: "4.50",
+    },
+    {
+      title: `Honey raf`,
+      imgUrl: coffee3,
+      description: "Espresso with frothed milk, cream and aromatic honey",
+      price: "5.50",
+    },
+    {
+      title: `Cheesecake`,
+      imgUrl: dessert3,
+      description: "Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar",
+      price: "4.50",
+    },
+    {
+      title: `Ice cappuccino`,
+      imgUrl: coffee4,
+      description: "Cappuccino with soft thick foam in summer version with ice",
+      price: "5.00",
+    },
+  ],
+  [MenuItem.COFFEES]: [
     {
       title: `Irish coffee`,
       imgUrl: coffee1,
@@ -77,26 +115,23 @@ export const menu = {
     {
       title: `S'mores Frappuccino`,
       imgUrl: coffee9,
-      description:
-        "This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.",
+      description: "Fragrant classic espresso with brown sugar and cinnamon before being topped with oat milk.",
       price: "5.50",
     },
     {
       title: "Caramel Macchiato",
       imgUrl: coffee10,
-      description:
-        "Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.",
+      description: "Fragrant classic espresso with caramel-peanut syrup, with cream under whipped thick foam.",
       price: "5.00",
     },
     {
       title: "Ice coffee",
       imgUrl: coffee11,
-      description:
-        "A popular summer drink that tones and invigorates during the heat. Prepared from classic coffee, milk and ice.",
+      description: "A popular summer classic coffee with milk and ice.",
       price: "4.50",
     },
   ],
-  [EntityType.TEA]: [
+  [MenuItem.TEAS]: [
     {
       title: `Moroccan`,
       imgUrl: tea1,
@@ -122,7 +157,7 @@ export const menu = {
       price: "5.50",
     },
   ],
-  [EntityType.DESSERT]: [
+  [MenuItem.DESSERTS]: [
     {
       title: `Marble cheesecake`,
       imgUrl: dessert1,
@@ -173,4 +208,4 @@ export const menu = {
     },
   ],
 };
-export { EntityType };
+export { MenuItem };
