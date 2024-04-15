@@ -1,7 +1,6 @@
-import { Navigate, useParams } from "react-router-dom";
-import { MenuItem, menu } from "../../../data/menuData";
+import { Link, Navigate, useParams } from "react-router-dom";
 import {
-  // Buy,
+  Buy,
   Card,
   CardContent,
   CardDescription,
@@ -11,36 +10,35 @@ import {
   ImgDiv,
   MenuContainer,
 } from "./styledMenu";
-import { MouseEvent } from "react";
+import { normalizedMenuData } from "../../../data/menuData";
+import { MenuItem } from "../../../types";
 
 export function Menu() {
   const { menuItem } = useParams();
 
-  const currentMenuItem = menu[menuItem as MenuItem];
+  const currentMenuItem = normalizedMenuData[menuItem as MenuItem];
+  const items = Object.values(currentMenuItem);
+
   if (!currentMenuItem) {
     return <Navigate to="../" replace />;
   }
 
-  function menuClick(e: MouseEvent<HTMLAnchorElement>) {
-    e.preventDefault();
-    console.log(e.currentTarget.dataset.value);
-    // console.log(`you wanna see ${title} card`);
-  }
-
   return (
     <MenuContainer>
-      {currentMenuItem.map(({ title, imgUrl, description, price }) => (
-        <Card data-value={title} key={title} onClick={menuClick}>
-          <ImgDiv>
-            <CardImage src={imgUrl} />
-          </ImgDiv>
-          <CardContent>
-            <CardHeader>{title}</CardHeader>
-            <CardDescription>{description}</CardDescription>
-          </CardContent>
-          <CardPrice>$ {price}</CardPrice>
-          {/* <Buy>Add</Buy> */}
-        </Card>
+      {items.map((item) => (
+        <Link to={item.title} key={item.title}>
+          <Card>
+            <ImgDiv>
+              <CardImage src={item.imgUrl} />
+            </ImgDiv>
+            <CardContent>
+              <CardHeader>{item.title}</CardHeader>
+              <CardDescription>{item.description}</CardDescription>
+            </CardContent>
+            <CardPrice>$ {item.price}</CardPrice>
+            <Buy>Details</Buy>
+          </Card>
+        </Link>
       ))}
     </MenuContainer>
   );

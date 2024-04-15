@@ -9,6 +9,7 @@ import { GetApp } from "../pages/getAppPage/GetApp";
 
 import { PageHeader } from "../components/pageHeader/PageHeader";
 import { Contacts } from "../components/contacts/Contacts";
+import { ProductPage } from "../pages/productPage/ProductPage";
 
 function App() {
   return (
@@ -20,9 +21,10 @@ function App() {
 
         {/* menu path */}
         <Route path="/menu" element={<MenuPage />}>
+          <Route index element={<Navigate to={`/menu/${MenuItem.COFFEES}`} />} />
           <Route path=":menuItem" element={<Menu />} />
-          <Route index element={<Navigate to={`/menu/${MenuItem.TOP_CHOICES}`} />} />
         </Route>
+        <Route path="/menu/:menuItem/:title" element={<ProductPage />} />
 
         {/* homepage path */}
         <Route path="/app" element={<GetApp />} />

@@ -38,7 +38,7 @@ export const Buy = styled.button`
   transition: 0.3s;
 `;
 
-export const Card = styled.a`
+export const Card = styled.div`
   width: 310px;
   height: 520px;
   border-radius: 20px;

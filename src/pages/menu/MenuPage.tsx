@@ -12,7 +12,7 @@ export default function MenuPage() {
         Behind each of our cups hides an <Accent>amazing surprise</Accent>
       </Header>
       <BtnDiv>
-        <MenuLink to={MenuItem.TOP_CHOICES}>Today's top choices</MenuLink>
+        {/* <MenuLink to={MenuItem.TOP_CHOICES}>Today's top choices</MenuLink> */}
         <MenuLink to={MenuItem.COFFEES}>
           <FiCoffee />
           Coffee

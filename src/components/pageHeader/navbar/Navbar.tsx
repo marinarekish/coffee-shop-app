@@ -13,9 +13,15 @@ export function Navbar() {
     <>
       <nav className={isOpen ? "flex" : " hidden md:flex"}>
         <NavContainer className="flex md:relative flex-col md:flex-row md:top-0 md:flex md:w-full">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/menu">Menu</NavLink>
-          <NavLink to="/app">Get our App</NavLink>
+          <NavLink to="/" onClick={toggleNavbar}>
+            Home
+          </NavLink>
+          <NavLink to="/menu" onClick={toggleNavbar}>
+            Menu
+          </NavLink>
+          <NavLink to="/app" onClick={toggleNavbar}>
+            Get our App
+          </NavLink>
         </NavContainer>
       </nav>
 
