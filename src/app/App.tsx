@@ -10,6 +10,7 @@ import { GetApp } from "../pages/getAppPage/GetApp";
 import { PageHeader } from "../components/pageHeader/PageHeader";
 import { Contacts } from "../components/contacts/Contacts";
 import { ProductPage } from "../pages/productPage/ProductPage";
+import { Cart } from "../pages/cartPage/Cart";
 
 function App() {
   return (
@@ -26,8 +27,11 @@ function App() {
         </Route>
         <Route path="/menu/:menuItem/:title" element={<ProductPage />} />
 
-        {/* homepage path */}
+        {/* mobile app path */}
         <Route path="/app" element={<GetApp />} />
+
+        {/* cart path */}
+        <Route path="/cart" element={<Cart />} />
 
         {/* default path */}
         <Route path="*" element={<Navigate to="/" />} />

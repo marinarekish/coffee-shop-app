@@ -22,6 +22,10 @@ export function Navbar() {
           <NavLink to="/app" onClick={toggleNavbar}>
             Get our App
           </NavLink>
+          <hr />
+          <NavLink to="/cart" onClick={toggleNavbar}>
+            Cart
+          </NavLink>
         </NavContainer>
       </nav>
 

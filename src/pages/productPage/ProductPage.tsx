@@ -1,4 +1,6 @@
+import { ChangeEvent, useCallback, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+
 import { Additive, MenuItem, ProductDetailsKey, Size } from "../../types";
 import { normalizedMenuData } from "../../data/menuData";
 import {
@@ -10,11 +12,15 @@ import {
   CloseButton,
   ProductPrice,
   ImgDiv,
+  BuyButton,
+  ProductButtons,
+  Disclaimer,
 } from "./styledProductPage";
+
 import { SizeChoice } from "./choices/SizeChoice";
 import { AdditivesChoice } from "./choices/AdditivesChoice";
-import { ChangeEvent, useCallback, useState } from "react";
 import { productDetails } from "../../data/menuData";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 
 export function ProductPage() {
   const { title, menuItem } = useParams();
@@ -45,7 +51,11 @@ export function ProductPage() {
     [selectedAdditives]
   );
 
-  function calculateFinalPrice() {
+  const handleAddToCart = () => {
+    console.log(selectedSize, selectedAdditives);
+  };
+
+  const calculateFinalPrice = () => {
     const initialPrice = +product.price;
     const sizePrice = productDetails[menuItem as ProductDetailsKey].size[selectedSize].price;
 
@@ -57,13 +67,13 @@ export function ProductPage() {
     }, 0);
 
     return initialPrice + sizePrice + additivesPrice;
-  }
+  };
 
   const finalPrice = calculateFinalPrice();
 
   return (
     <>
-      <Header>{product?.title}</Header>
+      <Header>{product.title}</Header>
       <Container>
         <ImgDiv>
           <ProductImage src={product.imgUrl} />
@@ -76,15 +86,18 @@ export function ProductPage() {
             <ProductPrice>Total:</ProductPrice>
             <ProductPrice>$ {finalPrice.toFixed(2)}</ProductPrice>
           </div>
-          <hr />
-          <p className="small">
-            The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty
-            points and enjoy your favorite coffee with up to 20% discount.
-          </p>
-          {/* change later */}
-          <Link to={`/menu/${menuItem}`}>
-            <CloseButton>close</CloseButton>
-          </Link>
+          <Disclaimer>
+            <IoIosInformationCircleOutline className="w-10 h-10" />
+            The cost is not final. Download our mobile app to see the final price and place your order.
+            <br />
+            Earn loyalty points and enjoy your favorite coffee with up to 20% discount.
+          </Disclaimer>
+          <ProductButtons>
+            <Link to={`/menu/${menuItem}`}>
+              <CloseButton>back to menu</CloseButton>
+            </Link>
+            <BuyButton onClick={handleAddToCart}>add to cart</BuyButton>
+          </ProductButtons>
         </ProductContent>
       </Container>
     </>

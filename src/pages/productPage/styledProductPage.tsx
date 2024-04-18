@@ -48,9 +48,20 @@ export const ProductImage = styled.img`
   object-fit: cover;
 `;
 
+export const ProductButtons = styled.div`
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+
 export const ProductContent = styled.div`
   padding: 20px;
   display: flex;
+  /* height: 640px; */
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
@@ -60,6 +71,7 @@ export const ProductText = styled.p`
   font-size: 26px;
   line-height: 150%;
   color: #403f3d;
+  margin-bottom: 20px;
 `;
 
 export const ChoiceDiv = styled.div`
@@ -102,12 +114,40 @@ export const ProductPrice = styled.h3`
   font-weight: 700;
   line-height: 125%;
   color: #403f3d;
+  margin-bottom: 0;
 `;
 
 export const CloseButton = styled.button`
-  width: 100%;
   border: 1px solid #665f55;
   border-radius: 20px;
   background: none;
   text-align: center;
+  padding: 10px 20px;
+
+  &:hover {
+    background: #403f3d;
+    color: #c1b6ad;
+  }
+`;
+
+export const BuyButton = styled.button`
+  border-radius: 20px;
+  background: #403f3d;
+  color: #c1b6ad;
+  text-align: center;
+  padding: 10px 20px;
+
+  &:hover {
+    background: #403f3d;
+    color: #c1b6ad;
+  }
+`;
+
+export const Disclaimer = styled.p`
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: #403f3d;
 `;
