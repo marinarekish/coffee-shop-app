@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import { ChangeEvent } from "react";
 
-import { ProductDetailsKey, Size } from "../../../types";
+import { MenuItem, Size } from "../../../types";
 
 import { productDetails } from "../../../data/menuData";
-import { ChoiceLabel, ChoiceDiv, ProductText, Input } from "../styledProductPage";
+import { ChoiceLabel, ChoiceDiv, ProductText, Input } from "../ProductPage.styled";
 
 type SizeChoiceProps = {
   selectedSize: Size;
@@ -13,7 +13,7 @@ type SizeChoiceProps = {
 
 export function SizeChoice({ selectedSize, handleSelectSize }: SizeChoiceProps) {
   const { menuItem } = useParams();
-  const currentCategory = productDetails[menuItem as ProductDetailsKey].size;
+  const currentCategory = productDetails[menuItem as MenuItem].size;
 
   return (
     <div>

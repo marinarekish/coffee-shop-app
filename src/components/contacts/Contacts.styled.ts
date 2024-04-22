@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 90%;
-  margin: 0 auto 1rem auto;
+  margin: auto auto 1rem auto;
   padding: 2rem;
   background-color: #403f3d;
   border-radius: 20px;
@@ -12,7 +12,7 @@ export const Container = styled.div`
   gap: 2rem;
 `;
 
-export const Header = styled.h1`
+export const HeaderContacts = styled.h1`
   font-size: 72px;
   line-height: 115%;
   margin: 0 auto 1rem auto;
@@ -29,11 +29,6 @@ export const Header = styled.h1`
     font-size: 42px;
     line-height: 115%;
   }
-`;
-
-export const Accent = styled.span`
-  color: #b0907a;
-  font-style: italic;
 `;
 
 export const Block = styled.div`

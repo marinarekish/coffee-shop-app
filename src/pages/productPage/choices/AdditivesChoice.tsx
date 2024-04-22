@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom";
 import { ChangeEvent } from "react";
 
 import { productDetails } from "../../../data/menuData";
-import { Additive, ProductDetailsKey } from "../../../types";
+import { Additive, MenuItem } from "../../../types";
 
-import { ChoiceDiv, ChoiceLabel, Input, ProductText } from "../styledProductPage";
+import { ChoiceDiv, ChoiceLabel, Input, ProductText } from "../ProductPage.styled";
 
 type AdditiveChoiceProps = {
   selectedAdditives: Additive[];
@@ -13,7 +13,8 @@ type AdditiveChoiceProps = {
 
 export function AdditivesChoice({ selectedAdditives, handleSelectAdditive }: AdditiveChoiceProps) {
   const { menuItem } = useParams();
-  const currentCategory = productDetails[menuItem as ProductDetailsKey].additives;
+
+  const currentCategory = productDetails[menuItem as MenuItem].additives;
 
   return (
     <div>

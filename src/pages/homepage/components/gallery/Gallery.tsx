@@ -1,6 +1,7 @@
 import { Photos } from "./Photos";
 import { IMAGES } from "../../../../data/galleryData";
-import { Accent, Container, Header } from "./styledGallery";
+import { Container } from "./Gallery.styled";
+import { Header, Accent } from "../../../../styled";
 
 export function Gallery() {
   return (

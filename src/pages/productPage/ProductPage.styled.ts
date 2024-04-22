@@ -14,28 +14,6 @@ export const Container = styled.div`
   }
 `;
 
-export const Header = styled.h1`
-  font-size: 60px;
-  line-height: 125%;
-  margin: 1rem auto;
-  color: #403f3d;
-  text-align: center;
-  margin: 0 auto;
-  max-width: 70%;
-
-  /* notepade */
-  @media (max-width: 768px) {
-    font-size: 42px;
-    line-height: 105%;
-  }
-
-  /* mobile */
-  @media (max-width: 380px) {
-    font-size: 32px;
-    line-height: 125%;
-  }
-`;
-
 export const ImgDiv = styled.div`
   height: 640px;
   min-width: 350px;

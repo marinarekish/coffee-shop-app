@@ -13,7 +13,6 @@ export type Slides = Slide[];
 
 // menu
 export enum MenuItem {
-  TOP_CHOICES = "top",
   COFFEES = "coffee",
   TEAS = "tea",
   DESSERTS = "dessert",
@@ -35,9 +34,7 @@ export type MenuItemDetails = {
   additives: Record<Additive, Detail>;
 };
 
-export type ProductDetailsKey = Exclude<MenuItem, MenuItem.TOP_CHOICES>;
-
-export type ProductDetails = Record<ProductDetailsKey, MenuItemDetails>;
+export type ProductDetails = Record<MenuItem, MenuItemDetails>;
 
 export enum Size {
   S = "S",
@@ -59,4 +56,5 @@ export type Detail = {
 
 export type NormalizedMenuCategory<T extends { title: string }> = Record<T["title"], T>;
 
-export type NormalizedMenuData = NormalizedMenuCategory<MenuCard>;
+export type NormalizedMenuCategoryData = { products: NormalizedMenuCategory<MenuCard> } & MenuItemDetails;
+export type NormalizedMenuData = Record<MenuItem, NormalizedMenuCategoryData>;

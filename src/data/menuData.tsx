@@ -35,44 +35,6 @@ import { Additive, Menu, MenuItem, NormalizedMenuData, ProductDetails, Size, Men
 import { normalizeData } from "../utils";
 
 export const menu: Menu = {
-  [MenuItem.TOP_CHOICES]: [
-    {
-      title: `Honey cake`,
-      imgUrl: dessert6,
-      description: "Classic honey cake with delicate custard",
-      price: "4.50",
-    },
-    {
-      title: "Caramel Macchiato",
-      imgUrl: coffee10,
-      description: "Fragrant classic espresso with caramel-peanut syrup, with cream under whipped thick foam.",
-      price: "5.00",
-    },
-    {
-      title: `Moroccan`,
-      imgUrl: tea1,
-      description: "Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint",
-      price: "4.50",
-    },
-    {
-      title: `Honey raf`,
-      imgUrl: coffee3,
-      description: "Espresso with frothed milk, cream and aromatic honey",
-      price: "5.50",
-    },
-    {
-      title: `Cheesecake`,
-      imgUrl: dessert3,
-      description: "Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar",
-      price: "4.50",
-    },
-    {
-      title: `Ice cappuccino`,
-      imgUrl: coffee4,
-      description: "Cappuccino with soft thick foam in summer version with ice",
-      price: "5.00",
-    },
-  ],
   [MenuItem.COFFEES]: [
     {
       title: `Irish coffee`,
@@ -330,14 +292,16 @@ export const productDetails: ProductDetails = {
   },
 };
 
-function normalizeMenuData(menuData: Menu) {
-  const normalizedMenuData = {} as Record<string, NormalizedMenuData>; // string as a key, NormalizedMenuData as a value
+export function normalizeMenuData(menuData: Menu, productDetails: ProductDetails) {
+  const normalizedMenuData = {} as NormalizedMenuData; // string as a key, NormalizedMenuData as a value
 
   for (const [key, data] of Object.entries<MenuCategory>(menuData)) {
-    normalizedMenuData[key] = normalizeData(data);
+    normalizedMenuData[key as MenuItem] = {
+      products: normalizeData(data),
+      size: productDetails[key as MenuItem].size,
+      additives: productDetails[key as MenuItem].additives,
+    };
   }
 
   return normalizedMenuData;
 }
-
-export const normalizedMenuData = normalizeMenuData(menu);

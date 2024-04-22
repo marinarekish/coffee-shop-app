@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Slides } from "../../../../types";
-import { BannerText, Card, Dots, Dot, DotSelected, ImageSlider, MainText, Paragraph } from "./styledSlider";
+import { BannerText, Card, Dots, Dot, DotSelected, ImageSlider, MainText, Paragraph } from "./Slider.styled";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { Button } from "../../../../components/button/Button";
+import { Link } from "react-router-dom";
 
 type SliderCardProps = {
   choices: Slides;
@@ -27,11 +28,11 @@ export function SliderCard({ choices }: SliderCardProps) {
   }
 
   return (
-    <>
-      <Card>
-        <Button variant="ghost" onClick={showPrev}>
-          <FiArrowLeft />
-        </Button>
+    <Card>
+      <Button variant="ghost" onClick={showPrev}>
+        <FiArrowLeft />
+      </Button>
+      <Link to={`/menu`}>
         <BannerText>
           <ImageSlider src={choices[choiceIndex].imgUrl} />
           <Dots>
@@ -45,10 +46,10 @@ export function SliderCard({ choices }: SliderCardProps) {
           <Paragraph>{choices[choiceIndex].description}</Paragraph>
           <MainText>${choices[choiceIndex].price}</MainText>
         </BannerText>
-        <Button variant="ghost" onClick={showNext}>
-          <FiArrowRight />
-        </Button>
-      </Card>
-    </>
+      </Link>
+      <Button variant="ghost" onClick={showNext}>
+        <FiArrowRight />
+      </Button>
+    </Card>
   );
 }

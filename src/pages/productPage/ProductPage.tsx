@@ -1,11 +1,13 @@
 import { ChangeEvent, useCallback, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { v4 } from "uuid";
 
-import { Additive, MenuItem, ProductDetailsKey, Size } from "../../types";
-import { normalizedMenuData } from "../../data/menuData";
+import { addToCart } from "../../store/slices/cartSlice";
+
+import { Additive, MenuItem, Size } from "../../types";
 import {
   Container,
-  Header,
   ProductContent,
   ProductText,
   ProductImage,
@@ -15,16 +17,21 @@ import {
   BuyButton,
   ProductButtons,
   Disclaimer,
-} from "./styledProductPage";
+} from "./ProductPage.styled";
 
 import { SizeChoice } from "./choices/SizeChoice";
 import { AdditivesChoice } from "./choices/AdditivesChoice";
-import { productDetails } from "../../data/menuData";
 import { IoIosInformationCircleOutline } from "react-icons/io";
+import { selectCategoryByMenuItem } from "../../store/slices/dataSlice";
+import { Header } from "../../styled";
 
 export function ProductPage() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { title, menuItem } = useParams();
-  const product = normalizedMenuData[menuItem as MenuItem][title as string];
+
+  const { size, additives, products } = useSelector(selectCategoryByMenuItem(menuItem as MenuItem));
+  const product = products[title as string];
 
   const [selectedSize, setSelectedSize] = useState(Size.S);
   const [selectedAdditives, setSelectedAdditives] = useState<Additive[]>([]);
@@ -51,17 +58,13 @@ export function ProductPage() {
     [selectedAdditives]
   );
 
-  const handleAddToCart = () => {
-    console.log(selectedSize, selectedAdditives);
-  };
-
   const calculateFinalPrice = () => {
     const initialPrice = +product.price;
-    const sizePrice = productDetails[menuItem as ProductDetailsKey].size[selectedSize].price;
+    const sizePrice = size[selectedSize].price;
 
     // selectedAdditives = [Additive.First, Additive.Second, Additive.Third]
     const additivesPrice = selectedAdditives.reduce((acc, item) => {
-      const currentPrice = productDetails[menuItem as ProductDetailsKey].additives[item].price;
+      const currentPrice = additives[item].price;
 
       return (acc += currentPrice);
     }, 0);
@@ -70,6 +73,22 @@ export function ProductPage() {
   };
 
   const finalPrice = calculateFinalPrice();
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        finalPrice,
+        selectedSize,
+        selectedAdditives,
+        title: product.title,
+        imgUrl: product.imgUrl,
+        category: menuItem as MenuItem,
+        id: v4(),
+      })
+    );
+
+    navigate(-1);
+  };
 
   return (
     <>
@@ -88,7 +107,7 @@ export function ProductPage() {
           </div>
           <Disclaimer>
             <IoIosInformationCircleOutline className="w-10 h-10" />
-            The cost is not final. Download our mobile app to see the final price and place your order.
+            The cost is not final. Download our mobile app to see possible discounts and promos.
             <br />
             Earn loyalty points and enjoy your favorite coffee with up to 20% discount.
           </Disclaimer>

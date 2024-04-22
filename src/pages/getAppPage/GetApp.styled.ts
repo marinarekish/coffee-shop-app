@@ -8,34 +8,10 @@ export const Container = styled.div`
   row-gap: 2rem;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 875px) {
     flex-direction: column;
     align-items: center;
   }
-`;
-
-export const Header = styled.h1`
-  font-size: 60px;
-  line-height: 125%;
-  color: #403f3d;
-  margin: 0;
-
-  /* notepade */
-  @media (max-width: 768px) {
-    font-size: 42px;
-    line-height: 105%;
-  }
-
-  /* mobile */
-  @media (max-width: 380px) {
-    font-size: 32px;
-    line-height: 125%;
-  }
-`;
-
-export const Accent = styled.span`
-  color: #b0907a;
-  font-style: italic;
 `;
 
 export const Content = styled.div`
@@ -62,13 +38,11 @@ export const Buttons = styled.div`
 export const Image = styled.img`
   width: 630px;
 
-  /* notepade */
   @media (max-width: 1200px) {
-    width: 540px;
+    width: 450px;
   }
 
-  /* mobile */
   @media (max-width: 380px) {
-    width: 348px;
+    width: 340px;
   }
 `;

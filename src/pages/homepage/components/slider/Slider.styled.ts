@@ -28,30 +28,14 @@ export const ImageSlider = styled.img`
   min-width: 260px;
   height: 480px;
   object-fit: cover;
-`;
 
-export const Header = styled.h1`
-  font-size: 60px;
-  line-height: 125%;
-  margin: 1rem auto;
-  color: #403f3d;
-
-  /* notepade */
   @media (max-width: 768px) {
-    font-size: 42px;
-    line-height: 105%;
+    width: 360px;
   }
 
-  /* mobile */
   @media (max-width: 380px) {
-    font-size: 32px;
-    line-height: 125%;
+    width: 340px;
   }
-`;
-
-export const Accent = styled.span`
-  color: #b0907a;
-  font-style: italic;
 `;
 
 export const Paragraph = styled.p`

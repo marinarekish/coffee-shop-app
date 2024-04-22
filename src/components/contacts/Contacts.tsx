@@ -1,14 +1,24 @@
 import { CiTwitter, CiInstagram, CiFacebook, CiLocationOn, CiPhone, CiClock2 } from "react-icons/ci";
-import { Accent, Block, ContactHeader, Container, Info, InfoLine, Header, Social, ContactText } from "./styledContacts";
+import {
+  Block,
+  ContactHeader,
+  Container,
+  Info,
+  InfoLine,
+  HeaderContacts,
+  Social,
+  ContactText,
+} from "./Contacts.styled";
 import { Link } from "react-router-dom";
+import { Accent } from "../../styled";
 
 export function Contacts() {
   return (
     <Container>
       <Block>
-        <Header>
+        <HeaderContacts>
           Sip, Savor, Smile. <Accent>It’s coffee time!</Accent>
-        </Header>
+        </HeaderContacts>
         <Social>
           <Link to="https://twitter.com/" target="blank">
             <CiTwitter className="w-10 h-10" />

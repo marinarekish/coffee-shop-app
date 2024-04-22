@@ -1,14 +1,15 @@
 import { MenuItem } from "../../types";
-import { Accent, BtnDiv, Container, Header, MenuLink } from "./styledMenuPage";
+import { BtnDiv, Container, MenuLink } from "./MenuPage.styled";
 import { Outlet } from "react-router-dom";
 import { FiCoffee } from "react-icons/fi";
 import { TbTeapot } from "react-icons/tb";
 import { RiCake3Line } from "react-icons/ri";
+import { Header, Accent } from "../../styled";
 
-export default function MenuPage() {
+export function MenuPage() {
   return (
     <Container>
-      <Header>
+      <Header className="px-10">
         Behind each of our cups hides an <Accent>amazing surprise</Accent>
       </Header>
       <BtnDiv>

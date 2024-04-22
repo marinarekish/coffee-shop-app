@@ -23,6 +23,16 @@ export const CardImage = styled.img`
   height: auto;
   transition: 0.4s;
   transform: scale(1.1, 1.1);
+
+  @media (max-width: 679px) {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  /* @media (max-width: 380px) {
+    height: 200px;
+    object-fit: cover;
+  } */
 `;
 
 export const Buy = styled.button`
@@ -61,6 +71,11 @@ export const Card = styled.div`
       transition: 0.3s;
     }
   }
+
+  @media (max-width: 679px) {
+    width: 420px;
+    height: 600px;
+  }
 `;
 
 export const CardContent = styled.div`
@@ -68,7 +83,7 @@ export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 10px;
 `;
 
 export const CardHeader = styled.h3`

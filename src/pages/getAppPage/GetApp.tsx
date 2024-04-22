@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Accent, Buttons, Container, Content, Header, Image, Text } from "./styledGetApp";
+import { Buttons, Container, Content, Image, Text } from "./GetApp.styled";
+import { Accent, Header } from "../../styled";
 
 export function GetApp() {
   return (

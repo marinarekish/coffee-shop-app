@@ -9,15 +9,16 @@ import {
   CardPrice,
   ImgDiv,
   MenuContainer,
-} from "./styledMenu";
-import { normalizedMenuData } from "../../../data/menuData";
+} from "./Menu.styled";
 import { MenuItem } from "../../../types";
+import { useSelector } from "react-redux";
+import { selectCategoryByMenuItem } from "../../../store/slices/dataSlice";
 
 export function Menu() {
   const { menuItem } = useParams();
 
-  const currentMenuItem = normalizedMenuData[menuItem as MenuItem];
-  const items = Object.values(currentMenuItem);
+  const currentMenuItem = useSelector(selectCategoryByMenuItem(menuItem as MenuItem));
+  const items = Object.values(currentMenuItem.products);
 
   if (!currentMenuItem) {
     return <Navigate to="../" replace />;
