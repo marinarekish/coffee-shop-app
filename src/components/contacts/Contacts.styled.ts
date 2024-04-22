@@ -2,20 +2,20 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 90%;
-  margin: auto auto 1rem auto;
+  margin: 10px auto;
   padding: 2rem;
   background-color: #403f3d;
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 2rem;
+  gap: 20px;
 `;
 
 export const HeaderContacts = styled.h1`
   font-size: 72px;
   line-height: 115%;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 10px auto;
   color: #e1d4c9;
   max-width: 560px;
   text-align: left;
@@ -52,14 +52,14 @@ export const ContactHeader = styled.h3`
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 10px;
   align-items: start;
 `;
 
 export const InfoLine = styled.div`
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 10px;
   color: #e1d4c9;
 `;
 

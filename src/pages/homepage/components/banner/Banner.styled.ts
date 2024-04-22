@@ -15,9 +15,14 @@ export const Container = styled.div`
     max-width: 786px;
   }
 
+  @media (max-width: 414px) {
+    padding: 20px;
+    width: 100%;
+  }
+
   @media (max-width: 380px) {
     padding: 30px;
-    max-width: 380px;
+    width: 100%;
   }
 `;
 

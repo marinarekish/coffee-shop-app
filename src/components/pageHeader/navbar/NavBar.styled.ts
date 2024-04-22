@@ -6,12 +6,12 @@ export const MainNav = styled.ul`
   display: flex;
   width: 100%;
   justify-content: flex-end;
-  margin: 0 40px 0 auto;
+  margin: 0 auto;
   gap: 70px;
 
   @media (max-width: 768px) {
-    visibility: hidden;
-    /* display: none; */
+    /* visibility: hidden; */
+    display: none;
   }
 `;
 

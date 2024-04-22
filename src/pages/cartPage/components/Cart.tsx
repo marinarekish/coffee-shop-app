@@ -11,15 +11,15 @@ export function Cart() {
 
   return (
     <Container>
-      <FinalPrice>
-        <h2>Total Price:</h2>
-        <h2>${totalPrice}</h2>
-      </FinalPrice>
       <div className="flex flex-col gap-4 px-10 ">
         {cartItems.map((params) => (
           <CartCard key={params.id} {...params} />
         ))}
       </div>
+      <FinalPrice>
+        <h2>Total Price:</h2>
+        <h2>${totalPrice}</h2>
+      </FinalPrice>
     </Container>
   );
 }
